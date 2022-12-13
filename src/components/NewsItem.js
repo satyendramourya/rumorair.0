@@ -16,7 +16,7 @@ import React from 'react'
         <div className="card-body">
           <h5 className="card-title h6" style={{color:props.text_color}}>{title}...</h5>
           <p className="card-text small"style={{color:props.text_color}}>{descreption}...</p>
-          <p className='card-text' > <small className='text-muted'>By {author?author:'Unknown'} on {new Date(publishedAt).toUTCString()}</small></p>
+          <p className='card-text'style={{color:props.text_color}} > <small className='text'  >By {author?author:'Unknown'} on {new Date(publishedAt).toLocaleString()}</small></p>
           <a href={newsUrl} target='_blank' rel="noreferrer"  className="btn btn-primary btn-sm" style={{cursor:"pointer"}}>Read More<span 
           className="position-absolute top-1 start-99 translate-middle badge rounded-pill bg-danger" style={{left:'80%' ,zIndex:'1'}}>{source}</span></a>
         </div>

@@ -15,9 +15,9 @@ export default function New(props) {
 
   const updateNews = async () => {
     props.setProgress(10);
-    let url = `https://api.worldnewsapi.com/search-news?api-key=4cd52267b53e4b388cdc6350dcead260&source-countries=${props.country}&text=${props.category}&number=50`
+    let url = `https://api.worldnewsapi.com/search-news?api-key=4cd52267b53e4b388cdc6350dcead260&source-countries=${props.country}&text=${props.category}&number=25`
     let data = await fetch(url);
-    console.log("fetched the news reports")
+    console.log(url)
     props.setProgress(30);
     setLoading(true)
     let parsedData = await data.json()
@@ -49,7 +49,7 @@ export default function New(props) {
                     title={element.title ? element.title.slice(0, 40) : "---"}
                     descreption={element.summary? element.summary.slice(0, 80) : ""}
                     imageUrl={element.image ? element.image : "https://tinypng.com/images/social/website.jpg"}
-                    author={element.author} publishedAt={element.publishedAt} newsUrl={element.url} />
+                    author={element.author} publishedAt={element.publish_date} newsUrl={element.url} />
                 </div>
               )
             })}
