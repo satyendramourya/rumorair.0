@@ -15,7 +15,7 @@ export default function New(props) {
 
   const updateNews = async () => {
     props.setProgress(10);
-    let url = `https://api.worldnewsapi.com/search-news?api-key=4cd52267b53e4b388cdc6350dcead260&source-countries=${props.country}&text=${props.category}&number=25`
+    let url = `https://api.worldnewsapi.com/search-news?api-key=4cd52267b53e4b388cdc6350dcead260&source-countries=${props.country}&text=${props.category}&number=15`
     let data = await fetch(url);
     console.log(url)
     props.setProgress(30);

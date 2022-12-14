@@ -10,7 +10,7 @@ export default function  NavBar(props){
     return (
       <nav className={`navbar navbar-expand-lg bg-${/*this.*/props.backgraoundColor} text-${/*this.*/props.color}`}>
         <div className="container-fluid">
-          <a className={`navbar-brand text-${/*this.*/props.color}`} href="/">Navbar</a>
+          <a className={`navbar-brand text-${/*this.*/props.color}`} href="/">rumorAir</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
