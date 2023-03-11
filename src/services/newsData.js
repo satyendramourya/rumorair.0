@@ -1,4 +1,4 @@
-export const getNews = async () => {
+export const getNews = async (category) => {
   const options = {
     method: "GET",
     headers: {
@@ -7,15 +7,12 @@ export const getNews = async () => {
     },
   };
 
-  let url =
-    "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=sports&pageNumber=1&pageSize=10&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null";
+  let url = `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${category}&pageNumber=1&pageSize=10&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null`;
 
   let data = await fetch(url, options);
   // .then(response => response.json())
   // .then(response => console.log(response.value))
   // .catch(err => console.error(err));
   let parsedData = await data.json();
-  console.log(parsedData);
-  console.log(parsedData.value);
   return parsedData.value;
 };
