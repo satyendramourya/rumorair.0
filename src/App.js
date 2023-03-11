@@ -1,68 +1,33 @@
-import './App.css';
-import React, { useState } from 'react'
-import NavBar from "./components/NavBar"
-import New from './components/New';
-import LoadingBar from 'react-top-loading-bar'
-import {BrowserRouter as Router,Routes,Route,} from "react-router-dom";
+import { useEffect } from "react";
+import News from "./components/News";
+import Navbar from "./components/Navbar";
 
-const App = () =>{
+function App() {
+  useEffect(() => {
+    const trailer = document.getElementById("trailer");
+    window.onmousemove = (e) => {
+      const x = e.clientX - trailer.offsetWidth / 2;
+      const y = e.clientY - trailer.offsetHeight / 2;
 
-  const [progress, setProgress] = useState(10)
-  const [mode, setMode] = useState('light')
-  const [color, setColor] = useState('black')
-  const [backgroundColor, setbackgroundColor] = useState('white')
-  const [item_color, setItem_color] = useState('white')
-  
-  
-  const toogleMode = () => {
-    if(/*this.state.*/mode==='light'){
+      const keyframes = {
+        transform: `translate(${x}px, ${y}px)`,
+      };
 
-    setColor('white')
-    setMode('dark')
-    setItem_color("#215eb5")
-    
-      document.body.style.backgroundColor = "#0A397A";
-      document.body.style.color = 'light';
-    }
-    else{
+      trailer.animate(keyframes, {
+        duration: 1200,
+      });
+    };
+  }, []);
+  return (
+    <div className=" bg-gray-900 text-white">
+      <div
+        id="trailer"
+        className="w-3 h-3 bg-white rounded-full fixed top-0 left-0 z-50"
+      ></div>
+      <Navbar />
+      <News />
+    </div>
+  );
+}
 
-    setColor('black')
-    setMode('light')
-    setItem_color("white")
-
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "black";
-    } 
-  }
-
-  // render() {
-
-    return (
-      <div>
-        <Router>
-        
-          <NavBar toogleMode={/*this.*/toogleMode} color={/*this.state.*/color} />
-         
-          <LoadingBar
-          color='#f11946'
-          progress={/*this.state.*/progress}
-          height = {4}/>
-          <Routes>
-            <Route exact  path="/" element={<New setProgress = {/*this.*/setProgress}   key='general' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="general"/>} />
-            <Route exact  path="/technology" element={<New setProgress = {/*this.*/setProgress}   key='technology' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="technology"/>} />
-            <Route exact  path="/entertainment" element={<New setProgress = {/*this.*/setProgress}   key='entertainment' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="entertainment"/>} />
-            <Route exact  path="/sports" element={<New setProgress = {/*this.*/setProgress}   key='sports' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="sports"/>} />
-            <Route exact  path="/business" element={<New setProgress = {/*this.*/setProgress}   key='business' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="business"/>} />
-            <Route exact  path="/health" element={<New setProgress = {/*this.*/setProgress}   key='health' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="health"/>} />
-            <Route exact  path="/science" element={<New setProgress = {/*this.*/setProgress}   key='science' text_color = {/*this.state.*/color} color={/*this.state.*/item_color}  category="science"/>} />
-
-
-          </Routes>
-        </Router>
-        
-      </div>
-    )
-  }
-// }
-
-export default App
+export default App;
