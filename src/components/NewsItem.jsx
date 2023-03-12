@@ -6,8 +6,8 @@ const NewsItem = ({ news }) => {
   let author = news.provider.name;
   author = author.charAt(0).toUpperCase() + author.slice(1);
   return (
-    <div className="container grid text-sm  rounded border-0 bg-gray-800 p-2 mx-auto items-center justify-center relative">
-      <div className="flex flex-row  items-center justify-center  ">
+    <div className="container grid text-sm overflow-hidden gap-2 rounded border-0 bg-gray-800 p-2 mx-auto items-center justify-center relative">
+      <div className="grid grid-cols-2  items-center justify-center  ">
         <img src={news.image.url} alt={news.image.title} className="w-40 rounded basis-1.6/3 items-center" />
         <p className="grid text-xs gap-0.5 mx-auto basis-1.4/3">
           <span className="text-red-500  font-bold">author</span>
