@@ -22,14 +22,14 @@ function App() {
   }, []);
   return (
     <div className=" bg-gray-900 text-white">
-      <Router>
-        <div
-          id="trailer"
-          className="w-3 h-3 bg-white rounded-full fixed top-0 left-0 z-50"
-        ></div>
-        <Navbar />
+      {/* <Router> */}
+      <div
+        id="trailer"
+        className="w-3 h-3 bg-white rounded-full fixed top-0 left-0 z-50"
+      ></div>
+      <Navbar />
 
-        <Routes>
+      {/* <Routes>
           <Route
             exact
             path="/"
@@ -50,8 +50,9 @@ function App() {
             path="/technology"
             element={<News key="technology" category="technology" />}
           />
-        </Routes>
-      </Router>
+        </Routes> */}
+      {/* </Router> */}
+      <News />
     </div>
   );
 }
