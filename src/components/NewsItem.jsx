@@ -6,21 +6,14 @@ const NewsItem = ({ news }) => {
   let author = news.provider.name;
   author = author.charAt(0).toUpperCase() + author.slice(1);
   return (
-    <div className="container grid text-sm overflow-hidden gap-2 rounded border-0 bg-gray-800 p-2 mx-auto items-center justify-center relative">
-      <div className="grid grid-cols-2  items-center justify-center  ">
-        <img src={news.image.url} alt={news.image.title} className="w-40 rounded basis-1.6/3 items-center" />
-        <p className="grid text-xs gap-0.5 mx-auto basis-1.4/3">
-          <span className="text-red-500  font-bold">author</span>
-          <span className="text-yellow-100">{author}</span>
-          <span>{publishDate}</span>
-        </p>
+    <div className="container text-sm overflow-hidden rounded border border-gray-800  p-2 relative lg:max-w-[250px] max-w-[300px] hover:shadow-grayish">
+      <img src={news.image.url} alt={news.image.title} />
+      <div className="flex space-x-10 mt-1">
+        <span className="text-red-500  font-bold">{author}</span>
+        <span className="text-gray-400">{publishDate}</span>
       </div>
-
-
-      <h2 className="font-bold" >{news.title}</h2>
-
-      <p className="text-gray-300">{news.snippet}</p>
-
+      <h2 className="font-bold my-2 leading-4" >{news.title}</h2>
+      <p className="text-gray-300 mb-2 text-xs">{news.snippet}</p>
       <div className="m-2  grid grid-cols-3 gap-2 items-center justify-center border-t-2 ">
         <button className="bg-blue-700 mt-2 py-2 text-xs items-center justify-center hover:scale-105  rounded">
           <a href={news.url} target="_blank" rel="noopener noreferrer">
@@ -33,6 +26,24 @@ const NewsItem = ({ news }) => {
       </div>
 
     </div>
+    // <div className="container grid text-sm overflow-hidden gap-2 rounded border-0 bg-gray-800 p-2 mx-auto items-center justify-center relative">
+    //   <div className="grid grid-cols-2  items-center justify-center  ">
+    //     <img src={news.image.url} alt={news.image.title} className="w-40 rounded basis-1.6/3 items-center" />
+    //     <p className="grid text-xs gap-0.5 mx-auto basis-1.4/3">
+    //       <span className="text-red-500  font-bold">author</span>
+    //       <span className="text-yellow-100">{author}</span>
+    //       <span>{publishDate}</span>
+    //     </p>
+    //   </div>
+
+
+    //   <h2 className="font-bold" >{news.title}</h2>
+
+    //   <p className="text-gray-300">{news.snippet}</p>
+
+
+
+    // </div>
   );
 };
 

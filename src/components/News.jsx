@@ -30,7 +30,7 @@ const News = () => {
     <div className="container mx-auto lg:px-16 px-2 ">
       {loading && <Spinner />}
       <h3 className=" text-center mb-5 mt-5 font-bold text-[24px]">{category.charAt(0).toUpperCase() + category.slice(1)} &nbsp;  <span className="text-[16px] font-semibold bg-gradient-to-r from-red-500 pl-1">NEWS</span></h3>
-      {!loading && (<><div className="container mx-auto lg:px-40 px-2 grid lg:grid-cols-4 gap-4">
+      {!loading && (<><div className="container mx-auto lg:px-40 px-2 flex flex-wrap gap-4  justify-center">
         {data.map((news) => (
           <NewsItem key={news.id} news={news} />
         ))}
