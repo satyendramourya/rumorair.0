@@ -3,6 +3,8 @@ import { getSummary } from "../services/newsData";
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import Dictionary from './Dictionary';
+import Spinner from "./Spinner";
+
 
 const Summary = () => {
 
@@ -29,7 +31,10 @@ const Summary = () => {
 
             </div>
             {
-                loading ? <h1>loading...</h1> : <p>
+                loading ? <div>
+                    <Spinner />
+                    <h2 className='mt-4 text-center'>Please Wait, Too many users requesting...</h2>
+                </div> : <p>
                     {
                         data
                     }
