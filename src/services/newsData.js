@@ -10,9 +10,6 @@ export const getNews = async (category, pageNo) => {
   let url = `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${category}&pageNumber=${pageNo}&pageSize=12&autoCorrect=true&fromPublishedDate=null&toPublishedDate=null`;
 
   let data = await fetch(url, options);
-  // .then(response => response.json())
-  // .then(response => console.log(response.value))
-  // .catch(err => console.error(err));
   let parsedData = await data.json();
   return parsedData.value;
 };
