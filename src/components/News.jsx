@@ -18,7 +18,7 @@ const News = () => {
     const fetchNews = async () => {
       setLoading(true);
       const news = await getNews(category, pageNo);
-      console.log(JSON.stringify(news))
+      // console.log(JSON.stringify(news))
       setData(news);
       setLoading(false);
     }

@@ -13,3 +13,20 @@ export const getNews = async (category, pageNo) => {
   let parsedData = await data.json();
   return parsedData.value;
 };
+
+export const getSummary = async (summaryUrl) => {
+  const url = `https://article-extractor-and-summarizer.p.rapidapi.com/summarize?url=${summaryUrl}&length=3`;
+  const options = {
+    method: "GET",
+    headers: {
+      "content-type": "application/octet-stream",
+      "X-RapidAPI-Key": "93a60ac86dmsh5c81249ca60e73ep197ba6jsncf41f77bfffc",
+      "X-RapidAPI-Host": "article-extractor-and-summarizer.p.rapidapi.com",
+    },
+  };
+
+  let data = await fetch(url, options);
+  let parsedData = await data.text();
+  console.log(parsedData);
+  return JSON.parse(parsedData);
+};
