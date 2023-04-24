@@ -15,7 +15,7 @@ export const getNews = async (category, pageNo) => {
 };
 
 export const getSummary = async (summaryUrl) => {
-  const url = `https://article-extractor-and-summarizer.p.rapidapi.com/summarize?url=${summaryUrl}&length=3`;
+  const url = `https://article-extractor-and-summarizer.p.rapidapi.com/summarize?url=${summaryUrl}&length=1`;
   const options = {
     method: "GET",
     headers: {
