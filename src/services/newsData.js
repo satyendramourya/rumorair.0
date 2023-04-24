@@ -20,7 +20,7 @@ export const getSummary = async (summaryUrl) => {
     method: "GET",
     headers: {
       "content-type": "application/octet-stream",
-      "X-RapidAPI-Key": "93a60ac86dmsh5c81249ca60e73ep197ba6jsncf41f77bfffc",
+      "X-RapidAPI-Key": "d8e9da62bfmsh4cd278f2e3e8ae1p1d2f3bjsnfe85558e49a2",
       "X-RapidAPI-Host": "article-extractor-and-summarizer.p.rapidapi.com",
     },
   };
